@@ -22,3 +22,60 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+<<<<<<< Updated upstream
+=======
+
+##  users Tabel
+
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| name               | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+| nickname           | string | null: false |
+| birthday           |  date  | null: false |
+
+### Association
+has_many :items
+has_many :Purchase record
+has_one :Delivery destination
+
+#  items Tabel
+
+| Column       | Type   | Options     |
+| ------------ | ------ | ----------- |
+| product name | string | null: false |
+| category     | string | null: false |
+| seller       | string | null: false |
+| price        | string | null: false |
+
+
+### Association
+belongs_to :user
+belongs_to :Purchase record
+
+#  Purchase record Tabel
+
+|  Column   |  Type  | Options     |
+| --------- | ------ | ----------- |
+| buyer     | string | null: false |
+| delivery  | string | null: false |
+
+### Association
+belongs_to :users
+has_many :items
+has_one :Delivery destination
+
+#  Delivery destination Tabel
+
+| Column     |  Type  | Options     |
+| ---------- | ------ | ----------- |
+| Prefecture | string | null: false |
+| city       | string | null: false |
+| address    | string | null: false |
+
+
+### Association
+belongs_to :users
+belongs_to :Purchase record
+>>>>>>> Stashed changes
